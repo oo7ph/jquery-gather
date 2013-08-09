@@ -22,5 +22,13 @@ $.fn.gather = function() {
 		})
 		.toArray();
 
-	return formData;
+	var formattedFormData = {};
+
+	for(var i = 0; i < formData.length; i++){
+	    for(x in formData[i]){
+	        formattedFormData[x] = formData[i][x];   
+	    }
+	}
+
+	return formattedFormData;
 };
